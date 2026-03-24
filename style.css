@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a24;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #e8e6f0;
+}
+
+#wrap {
+  text-align: center;
+}
+
+.game-stack {
+  display: inline-block;
+  width: min(96vw, 960px);
+  vertical-align: top;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.canvas-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 3px solid #3d3d52;
+  border-bottom: none;
+  background: #252538;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 320 / 180;
+  /* 高分辨率 backingStore 由浏览器缩放到盒尺寸，auto 比 pixelated 更适合文字 */
+  image-rendering: auto;
+  background: #252538;
+}
+
+.gameover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 16, 28, 0.88);
+  z-index: 2;
+}
+
+.gameover-overlay.hidden {
+  display: none;
+}
+
+.gameover-inner {
+  padding: 1.25rem 1.5rem 1.5rem;
+  max-width: 90%;
+}
+
+.gameover-inner h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.75rem, 10vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: #ff8a80;
+  text-shadow: 0 2px 0 #1a1020, 0 4px 24px rgba(255, 100, 90, 0.35);
+}
+
+.gameover-inner.gameover-win h1 {
+  color: #aed581;
+  text-shadow: 0 2px 0 #1a1020, 0 4px 24px rgba(120, 200, 80, 0.3);
+}
+
+.btn-restart {
+  cursor: pointer;
+  padding: 0.65rem 1.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #1a1a24;
+  background: linear-gradient(180deg, #e8e6f0, #c8c4d8);
+  border: 2px solid #5c5c78;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 #3d3d52;
+}
+
+.btn-restart:hover {
+  filter: brightness(1.06);
+}
+
+.btn-restart:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #3d3d52;
+}
+
+.hud-bar {
+  width: 100%;
+  margin: 0;
+  padding: 0.35rem 0.65rem 0.45rem;
+  border: 3px solid #3d3d52;
+  border-top: 1px solid #4a4a62;
+  background: rgba(22, 20, 32, 0.92);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #e0dde8;
+}
+
+.hud-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.hud-row-secondary {
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  color: #b8b4c8;
+}
+
+.hud-sep {
+  opacity: 0.45;
+  user-select: none;
+}
+
+#skill-hud.skill-ready {
+  color: #ffe082;
+}
+
+#skill-hud.skill-spent {
+  color: #6d6a7a;
+}
+
+#hint {
+  margin: 0.45rem 0 0;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}

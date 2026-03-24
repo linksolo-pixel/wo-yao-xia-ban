@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>职场大乱斗：我要下班</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="wrap">
+    <div class="game-stack">
+      <div class="canvas-wrap">
+        <canvas id="game"></canvas>
+        <div id="gameover-overlay" class="gameover-overlay hidden" aria-hidden="true">
+          <div class="gameover-inner">
+            <h1 id="gameover-title">被优化了</h1>
+            <button type="button" id="btn-restart" class="btn-restart">重新开始</button>
+          </div>
+        </div>
+      </div>
+      <div id="hud" class="hud-bar" aria-label="状态">
+        <div class="hud-row hud-row-primary">
+          <span id="time"></span>
+          <span class="hud-sep" aria-hidden="true">·</span>
+          <span id="hp"></span>
+          <span class="hud-sep" aria-hidden="true">·</span>
+          <span id="wave"></span>
+        </div>
+        <div class="hud-row hud-row-secondary">
+          <span id="weapon-hud"></span>
+          <span class="hud-sep" aria-hidden="true">·</span>
+          <span id="skill-hud"></span>
+        </div>
+      </div>
+    </div>
+    <p id="hint">WASD / 方向键移动 · 自动攻击 · <strong>R</strong> 离职信全屏（每局一次）· 坚持到下班</p>
+  </div>
+  <script src="game/main.js"></script>
+</body>
+</html>
